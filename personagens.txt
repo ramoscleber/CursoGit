@@ -1,5 +1,6 @@
 Testando a importação do git
 Adicionei a segunda linha no arquivo
+MAIS UMA LINHA DE TEXTO
 
 CREATE TABLE sea.biblioteca (
   id_biblioteca INTEGER NOT NULL,
