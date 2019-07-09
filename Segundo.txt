@@ -7,6 +7,36 @@ Select  c.nome as Acadêmico,a.numero_matricula as Matrícula,c.telefone, c.emai
   INNER join singu.pessoa c on b.id_pessoa = c.id_pessoa
   inner join academico.curso d on d.id_curso = a.id_curso
   inner join situacao_aluno_curso e on e.id_situacao_aluno_curso = a.id_situacao_aluno_curso
+  --Case when d.nome = 'MATEMÁTICA JIPA' then ' Licenciatura em Matemática' end as Curso
+ from academico.aluno_curso a
+  inner join singu.pessoa_papel b on a.id_pp_aluno_graduacao = b.id_pessoa_papel
+  INNER join singu.pessoa c on b.id_pessoa = c.id_pessoa
+  inner join academico.curso d on d.id_curso = a.id_curso
+  inner join situacao_aluno_curso e on e.id_situacao_aluno_curso = a.id_situacao_aluno_curso
+  --Case when d.nome = 'MATEMÁTICA JIPA' then ' Licenciatura em Matemática' end as Curso
+ from academico.aluno_curso a
+  inner join singu.pessoa_papel b on a.id_pp_aluno_graduacao = b.id_pessoa_papel
+  INNER join singu.pessoa c on b.id_pessoa = c.id_pessoa
+  inner join academico.curso d on d.id_curso = a.id_curso
+  inner join situacao_aluno_curso e on e.id_situacao_aluno_curso = a.id_situacao_aluno_curso
+  --Case when d.nome = 'MATEMÁTICA JIPA' then ' Licenciatura em Matemática' end as Curso
+ from academico.aluno_curso a
+  inner join singu.pessoa_papel b on a.id_pp_aluno_graduacao = b.id_pessoa_papel
+  INNER join singu.pessoa c on b.id_pessoa = c.id_pessoa
+  inner join academico.curso d on d.id_curso = a.id_curso
+  inner join situacao_aluno_curso e on e.id_situacao_aluno_curso = a.id_situacao_aluno_curso
+  --Case when d.nome = 'MATEMÁTICA JIPA' then ' Licenciatura em Matemática' end as Curso
+ from academico.aluno_curso a
+  inner join singu.pessoa_papel b on a.id_pp_aluno_graduacao = b.id_pessoa_papel
+  INNER join singu.pessoa c on b.id_pessoa = c.id_pessoa
+  inner join academico.curso d on d.id_curso = a.id_curso
+  inner join situacao_aluno_curso e on e.id_situacao_aluno_curso = a.id_situacao_aluno_curso
+  --Case when d.nome = 'MATEMÁTICA JIPA' then ' Licenciatura em Matemática' end as Curso
+ from academico.aluno_curso a
+  inner join singu.pessoa_papel b on a.id_pp_aluno_graduacao = b.id_pessoa_papel
+  INNER join singu.pessoa c on b.id_pessoa = c.id_pessoa
+  inner join academico.curso d on d.id_curso = a.id_curso
+  inner join situacao_aluno_curso e on e.id_situacao_aluno_curso = a.id_situacao_aluno_curso
  
 
 where a.id_curso  in(91,169) and a.id_situacao_aluno_curso =6
