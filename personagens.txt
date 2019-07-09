@@ -1,1 +1,84 @@
 Testando a importação do git
+Adicionei a segunda linha no arquivo
+
+CREATE TABLE sea.biblioteca (
+  id_biblioteca INTEGER NOT NULL,
+  id_orgao INTEGER,
+  CONSTRAINT biblioteca_pkey PRIMARY KEY(id_biblioteca),
+  CONSTRAINT biblioteca_fk FOREIGN KEY (id_biblioteca)
+    REFERENCES singu.armario(id_biliblioteca)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+    NOT DEFERRABLE
+) 
+WITH (oids = false);
+
+
+CREATE TABLE sea.situacao (
+  id_situacao SERIAL,
+  descricao VARCHAR(30),
+  CONSTRAINT situacao_pkey PRIMARY KEY(id_situacao),
+  CONSTRAINT situacao_fk FOREIGN KEY (id_situacao)
+    REFERENCES singu.armario(id_situacao)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+    NOT DEFERRABLE
+) 
+WITH (oids = false);
+
+
+CREATE TABLE sea.armario (
+  id_armario SERIAL,
+  descricao VARCHAR(30),
+  id_situacao INTEGER,
+  id_biliblioteca INTEGER,
+  CONSTRAINT armario_pkey PRIMARY KEY(id_armario),
+  CONSTRAINT armario_fk FOREIGN KEY (id_armario)
+    REFERENCES singu.armario_historico(id_armario)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+    NOT DEFERRABLE
+) 
+WITH (oids = false);
+
+
+CREATE TABLE singu.armario_historico (
+  id_historico SERIAL,
+  id_armario INTEGER NOT NULL,
+  id_operador INTEGER NOT NULL,
+  id_solicitante INTEGER NOT NULL,
+  data_solicitacao DATE,
+  data_dev_prevista DATE,
+  data_dev_efetiva DATE,
+  CONSTRAINT armario_historico_pkey PRIMARY KEY(id_historico)
+) 
+WITH (oids = false);
+
+
+CREATE TABLE singu.aux_tipo_pessoa (
+  id_tipo_pessoa SERIAL,
+  descricao VARCHAR(30),
+  CONSTRAINT axu_tipo_pessoa_pkey PRIMARY KEY(id_tipo_pessoa),
+  CONSTRAINT aux_tipo_pessoa_fk FOREIGN KEY (id_tipo_pessoa)
+    REFERENCES singu.pessoa_sea(id_tipo_pessoa)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+    NOT DEFERRABLE
+) 
+WITH (oids = false);
+
+CREATE TABLE singu.pessoa_sea (
+  id_pessoa_sigaa INTEGER NOT NULL,
+  nome VARCHAR(50) NOT NULL,
+  email VARCHAR(50),
+  telefone VARCHAR(50),
+  cpf VARCHAR(15),
+  id_tipo_pessoa INTEGER,
+  CONSTRAINT pessoa_sea_pkey PRIMARY KEY(id_pessoa_sigaa),
+  CONSTRAINT pessoa_sea_fk FOREIGN KEY (id_pessoa_sigaa)
+    REFERENCES singu.armario_historico(id_operador)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+    NOT DEFERRABLE
+) 
+WITH (oids = false);
